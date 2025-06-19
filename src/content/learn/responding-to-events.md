@@ -109,7 +109,7 @@ Gdy piszesz kod w jednej linii, ta sama pułapka czeka na ciebie w innej formie:
 Przekazywanie kodu w lini, tak jak w poniższym przykładzie, nie uruchomi się na kliknięcie - wywoła się za każdym razem, gdy komponent się wyrenderuje:
 
 ```jsx
-// Ten alert wyskoczy gdy komponent się generuje, a nie gdy został naciśnięty!
+// Ten alert wyskoczy, gdy komponent się renderuje, a nie gdy został naciśnięty!
 <button onClick={alert('Nacisnąłeś mnie!')}>
 ```
 
@@ -119,20 +119,21 @@ Jeśli chcesz stworzyć własną procedurę obsługi zdarzeń w linii, otocz ją
 <button onClick={() => alert('Nacisnąłeś mnie!')}>
 ```
 
-Zamiast wywoływać kod wewnątrz z każdym renderowaniem, stworzy to funkcję do wywołania później.
+Zamiast wywoływać kod wewnątrz przy każdym renderowaniu, stworzy to funkcję do wywołania później.
 
 W obu przypadkach to co chcesz przekazać, jest funkcją:
 
-* `<button onClick={handleClick}>` prezkazuje funkcję `handleClick`.
-* `<button onClick={() => alert('...')}>` prezkazuje funkcję `() => alert('...')`.
+* `<button onClick={handleClick}>` przekazuje funkcję `handleClick`.
+* `<button onClick={() => alert('...')}>` przekazuje funkcję `() => alert('...')`.
 
-[Więcej o funkcjach strzałkowych.](https://javascript.info/arrow-functions-basics)
+[Przeczytaj więcej o funkcjach strzałkowych.](https://javascript.info/arrow-functions-basics)
 
 </Pitfall>
 
 ### Odczytywanie właściwości w procedurach obsługi zdarzeń {/*reading-props-in-event-handlers*/}
 
 Ponieważ procedury są deklarowane wewnątrz komponentu, mają dostęp do jego właściwości. Oto przycisk, który po kliknięciu pokaże alert z właściwością `message`:
+
 <Sandpack>
 
 ```js
@@ -151,7 +152,7 @@ export default function Toolbar() {
         Odtwórz film
       </AlertButton>
       <AlertButton message="Dodawanie!">
-        Dodaj film
+        Dodaj obraz
       </AlertButton>
     </div>
   );
@@ -168,7 +169,7 @@ To pozwala tym dwóm przyciskom pokazywać różne wiadomości. Spróbuj je zmie
 
 ### Przekazywanie procedur obsługi zdarzeń jako właściwości {/*passing-event-handlers-as-props*/}
 
-Często będziesz chciał, aby komponent-rodzic zdefiniował dziecku procedurę obsługi zdarzeń. Przyjrzyj się przyciskom: w zależności od tego, gdzie użyjesz komponentu `Button`, możesz chcieć wykonać inną funkcję - być może jeden odtwarza film, a drugi wrzuca obrazek?
+Często będziesz chcieć, aby komponent-rodzic zdefiniował dziecku procedurę obsługi zdarzeń. Przyjrzyj się przyciskom: w zależności od tego, gdzie użyjesz komponentu `Button`, możesz chcieć wykonać inną funkcję - być może jeden odtwarza film, a drugi dodaje obrazek?
 
 Aby to zrobić, przekaż właściwość, którą komponent otrzymał od rodzica, jako procedura obsługi w taki sposób:
 
