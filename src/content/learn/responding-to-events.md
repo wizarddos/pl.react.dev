@@ -4,7 +4,7 @@ title: Obsługa zdarzeń
 
 <Intro>
 
-React pozwala nam dodać *procedury obsługi zdarzeń* (ang. _event handlers_) do naszego JSX. Procedury obsługi zdarzeń to twoje własne funkcje, które zostaną wywołane w odpowiedzi na interakcje tj. klikanie, najeżdżanie, wybieranie pól tekstowych itp.
+React pozwala nam dodać *procedury obsługi zdarzeń* (ang. _event handlers_) do naszego JSXa. Procedury obsługi zdarzeń to twoje własne funkcje, które zostaną wywołane w odpowiedzi na interakcje tj. klikanie, najeżdżanie, wybieranie pól tekstowych itp.
 
 </Intro>
 
@@ -18,7 +18,7 @@ React pozwala nam dodać *procedury obsługi zdarzeń* (ang. _event handlers_) d
 
 ## Dodawanie procedur obsługi zdarzeń {/*adding-event-handlers*/}
 
-Aby dodać procedurę obsługi zdarzeń, najpierw zdefiniuj funkcję, a następnie [przekaż ją jako właściwość (ang. prop)](/learn/passing-props-to-a-component) do odpowiedniego tagu JSX. Na przykład, oto przycisk, który jeszcze nic nie robi:
+Aby dodać procedurę obsługi zdarzeń, najpierw zdefiniuj funkcję, a następnie [przekaż ją jako właściwość (ang. _prop_)](/learn/passing-props-to-a-component) do odpowiedniego tagu JSX. Na przykład, oto przycisk, który jeszcze nic nie robi:
 
 <Sandpack>
 
@@ -62,7 +62,7 @@ button { margin-right: 10px; }
 
 </Sandpack>
 
-Zdefiniowałeś funkcję `handleClick` a potem [przekazałeś ją jako właściwość](/learn/passing-props-to-a-component) do `<button>`.  `handleClick` jest **procedurą obsługi zdarzeń.** Takie funkcje:
+Zdefiniowana funkcja `handleClick`, która jest potem [przekazana jako właściwość](/learn/passing-props-to-a-component) do `<button>`, jest **procedurą obsługi zdarzeń.** Funkcje taka jak ta:
 
 * Są zwykle definiowane *wewnątrz* komponentów
 * Mają nazwy zaczynające się od `handle`, po których następuje nazwa zdarzenia.
