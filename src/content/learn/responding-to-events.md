@@ -67,9 +67,9 @@ Zdefiniowana funkcja `handleClick`, która jest potem [przekazana jako właściw
 * Są zwykle definiowane *wewnątrz* komponentów
 * Mają nazwy zaczynające się od `handle`, po których następuje nazwa zdarzenia.
 
-Często zauważysz `onClick={handleClick}`, `onMouseEnter={handleMouseEnter}` itp.
+Zgodnie z konwencją, nazwy funkcji obsługujących zdarzenia zazwyczaj zaczynają się od `handle`, po którym następuje nazwa zdarzenia. Często zobaczysz składnię taką jak `onClick={handleClick}`, `onMouseEnter={handleMouseEnter}` i podobne.
 
-Oprócz tego, możesz zdefiniować procedurę obsługi zdarzeń w jednej lini z JSX:
+Oprócz tego, możesz zdefiniować procedurę obsługi zdarzeń w miejscu wywołania w JSX:
 
 ```jsx
 <button onClick={function handleClick() {
@@ -84,11 +84,12 @@ Lub zwięźlej, używając funkcji strzałkowej:
   alert('Nacisnąłeś mnie!');
 }}>
 ```
-Oba style dadzą ten sam rezultat. Ten sposób definiowania jest wygodny dla krótkich funkcji
+
+Oba style dadzą ten sam rezultat. Ten sposób definiowania jest wygodny dla krótkich funkcji.
 
 <Pitfall>
 
-Funkcje przekazywane do procedury obsługi zdarzeń, nie są wywoływane. Na przykład:
+Funkcje przekazywane do procedury obsługi zdarzeń muszą być przekazywane, nie wywoływane. Przykład:
 
 | przekazanie funkcji (prawidłowo) | wywołanie funkcji (nieprawidłowo)  |
 | -------------------------------- | ---------------------------------- |
